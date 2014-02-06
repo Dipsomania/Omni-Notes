@@ -100,9 +100,9 @@
 	            android:key="settings_enable_tag_marker_full_list_only"
 	            android:title="@string/settings_enable_tag_marker_full_list_only"
 	            android:summary="@string/settings_enable_tag_marker_full_list_only_summary" 
-	            android:dependency="settings_enable_tag_marker_full"/>	            
-	            
+	            android:dependency="settings_enable_tag_marker_full"/>	
 	        </PreferenceScreen>
+	        
 	        <SwitchPreference
 	            android:defaultValue="true"
 			    android:switchTextOn="On"
@@ -124,6 +124,13 @@
 	            android:key="settings_hours_format"
 	            android:title="@string/settings_hours_format" 
 	            android:summary="@string/settings_hours_format_summary"/>
+	        
+	        <Preference 
+	            android:key="settings_instructions"
+	            android:title="@string/settings_instructions_show_again" 
+	            android:summary="@string/settings_instructions_show_again_summary"/>
+	        
+	        
 	    </PreferenceScreen>
 	  
 	    <PreferenceScreen

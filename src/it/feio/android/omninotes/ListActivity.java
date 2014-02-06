@@ -22,6 +22,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.espian.showcaseview.ShowcaseView;
 import com.haarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
 import com.neopixl.pixlui.components.textview.TextView;
 
@@ -136,15 +137,15 @@ public class ListActivity extends BaseActivity {
 			}
 		}
 		setTitle(title == null ? getString(R.string.title_activity_list) : title);
-		
-		// Invitation to rate the app
-		// Removed in favor of a more elegant way: updates are checked and the invite to vote is moved there
-//		AppRater.appLaunched(this, getString(R.string.rate_dialog_message), getString(R.string.rate_dialog_rate_btn),
-//				getString(R.string.rate_dialog_dismiss_btn), getString(R.string.rate_dialog_later_btn));
+	
 
 		// Launching update task
 		UpdaterTask task = new UpdaterTask(this);
 		task.execute();
+		
+		
+		// Instructions on first launch
+//		showCase();
 	}
 	
 	
@@ -555,6 +556,9 @@ public class ListActivity extends BaseActivity {
 		// Initialization of SearchView
 		initSearchView(menu);
 		
+		// Show instructions on first launch
+		showCase(Constants.PREF_INSTRUCTIONS_PREFIX + "listactivity_actions", R.id.menu_add, ShowcaseView.ITEM_ACTION_ITEM);
+				
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -1099,6 +1103,10 @@ public class ListActivity extends BaseActivity {
 		overridePendingTransition(0, 0);
 		startActivity(intent);
 	}
+	
+	
+	
+	
 
 
 }

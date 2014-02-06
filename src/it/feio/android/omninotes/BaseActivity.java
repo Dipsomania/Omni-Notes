@@ -44,6 +44,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.espian.showcaseview.ShowcaseView;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.GoogleAnalytics;
 import com.google.analytics.tracking.android.Tracker;
@@ -51,7 +52,7 @@ import com.google.analytics.tracking.android.Tracker;
 @SuppressLint("Registered") 
 public class BaseActivity extends ActionBarActivity {
 
-	private final boolean TEST = true;
+	private final boolean TEST = false;
 	
 	protected DbHelper db;	
 	protected Activity mActivity;
@@ -280,6 +281,22 @@ public class BaseActivity extends ActionBarActivity {
 	protected void updateNavigation(String nav){
 		prefs.edit().putString(Constants.PREF_NAVIGATION, nav).commit();
 		navigation = nav;
+	}
+	
+	
+	
+	/**
+	 * Used for ShowCase library instructions
+	 * @param istructionsName
+	 * @param target
+	 * @param type
+	 */
+	protected void showCase(String istructionsName, int target, int type) {
+		if (!prefs.getBoolean(istructionsName, false)) {
+			ShowcaseView.insertShowcaseViewWithType(type,
+		            R.id.menu_add, this, istructionsName + "_title", istructionsName + "_detail", new ShowcaseView.ConfigOptions());
+			prefs.edit().putBoolean(istructionsName, true).commit();
+		}
 	}
 	
 

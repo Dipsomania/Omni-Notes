@@ -202,7 +202,12 @@
     <string name="colors">Colors</string>
     <string name="settings_enable_tag_marker_full_list_only">Only list</string>
     <string name="settings_enable_tag_marker_full_list_only_summary">Force full color only in notes list while into detail only the small marker is colored </string>
+    <string name="settings_instructions_show_again">Instructions</string>
+    <string name="settings_instructions_show_again_summary">Show once again application instructions</string>
     
+    <!-- Instructions -->
+	<string name="listactivity_actions_title">Actions are here</string>
+	<string name="listactivity_actions_detail">You can use them to search, add, sort notes or access to application settings</string>
 
     <!-- Accessibility -->
     <string name="drawer_open">drawer open</string>

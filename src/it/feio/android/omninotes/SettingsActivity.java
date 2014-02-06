@@ -231,6 +231,20 @@ public class SettingsActivity extends PreferenceActivity {
 			}
 		});
 		
+		
+		
+		// Instructions
+		Preference instructions = findPreference("settings_instructions");
+		instructions.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+			// The'll be shown once again deleting boolean preferences
+			@Override
+			public boolean onPreferenceClick(Preference preference) {
+				consta
+				return false;
+			}
+		});		
+		
+		
 
 
 		// Changelog 

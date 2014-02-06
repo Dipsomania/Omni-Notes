@@ -107,7 +107,15 @@
                 android:key="settings_hours_format"
                 android:summary="@string/settings_hours_format_summary"
                 android:title="@string/settings_hours_format" />
+            	        
+	        <Preference 
+	            android:key="settings_instructions"
+	            android:title="@string/settings_instructions_show_again" 
+	            android:summary="@string/settings_instructions_show_again_summary"/>
+            
         </PreferenceScreen>
+        
+        
         <PreferenceScreen
             android:key="category_notifications"
             android:title="@string/settings_category_notifications" >
